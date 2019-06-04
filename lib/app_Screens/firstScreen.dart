@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 final backgroundColor=Colors.grey[400];
 final textDir=TextDirection.ltr;
@@ -14,11 +15,19 @@ class FirstScreen extends StatelessWidget{
         color:backgroundColor,
         child: Center(
           child: Text(
-            "Stuff",
+            generateLuckyNumber(),
             textDirection: textDir,
             style: TextStyle(color:textStyleColor[0],fontSize: textFontSize),
           ),
         )
     );
+  }
+
+
+  String generateLuckyNumber(){
+    var random=Random();
+    int luckyNumber=random.nextInt(10);
+
+  return "Your lucky number is ${luckyNumber}";
   }
 }
